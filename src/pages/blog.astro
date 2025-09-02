@@ -1,0 +1,17 @@
+---
+import BlogPost from '../components/BlogPost.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const pageTitle = "My Astro Learning Blog";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>About this entry</h2>
+
+  <p><i>Lorem Ipsum</i> is for <b>dummies</b>. Real developers type their own flavor text!!</p>
+  <p>(btw have some blog entries:)</p>
+
+  <ul>
+    {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+  </ul>
+</BaseLayout>
