@@ -1,9 +1,12 @@
 ---
 import Greeting from "../components/Greeting";
+import ReactCounter from "../components/ReactCounter";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home Page";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+  <p>And here you have a React counter:</p>
+  <ReactCounter client:load />
   <h2>Isn't it awesome :]</h2>
 </BaseLayout>

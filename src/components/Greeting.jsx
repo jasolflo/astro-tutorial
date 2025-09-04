@@ -1,3 +1,5 @@
+/** @[WITHOUT_THIS_SPACE]jsxImportSource preact: use preact here only. Better to do this via astro.config.mjs */
+
 import { useState } from 'preact/hooks';
 
 export default function Greeting({messages}) {
